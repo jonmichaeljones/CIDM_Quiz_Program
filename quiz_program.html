@@ -26,10 +26,14 @@
                     
                 var sc = this;
                 
-               sc.array = [];
+                sc.name = "";
+                
+                sc.array = new Array();
+                
+                
                 
                 sc.add = function add(){
-                        sc.students;
+                        sc.name = sc.array;
                     }  
                     
                 }
@@ -52,12 +56,13 @@
     </head>
     
     <body>
-        <div ng-controller="MainController as mc"> 
-            <input type ="text" ng-model="sc.name"/>
-            <button ng-click="sc.students">Add Student</button>
-        
-        
-        
+        <div ng-controller="Main Controller as mc">
+            <div ng-controller="StudentController as sc">
+                <input type ="text" ng-model="sc.name" placeholder="Enter Name"/>
+                <button ng-click="sc.add">Add Student</button>
+            
+                <div>{{ array }}</div>
+            </div>
         
         </div>           
     </body>
