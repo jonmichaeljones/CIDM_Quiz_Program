@@ -6,7 +6,7 @@
 
     var mymodule = angular.module('QuizProgram', []);
     
-     mymodule.controller('StudentController', ['$scope', function($scope) {
+    mymodule.controller('StudentController', ['$scope', function($scope) {
         
         var sc = this;
     
@@ -24,9 +24,38 @@
            sc.pickedStudent = sc.studentArray[Math.floor(Math.random() * sc.studentArray.length)];
         }
         
+        
+        sc.removeStudent = function(){
+            sc.removedStudent = sc.studentArray.splice(sc.pickedStudent, 1);
+        }
+        
+        
+        
     }]);
 
+    mymodule.controller('QuestionController', ['$scope', function($scope) {
         
+        var qc = this;
+    
+        qc.question;
+        /*
+        sc.questionArray = [];
+    
+        
+        
+         sc.addQuestion = function() {
+            sc.questionArray.push(this.question);
+        }
+
+        sc.randomStudent = function(){
+           sc.pickedStudent = sc.studentArray[Math.floor(Math.random() * sc.studentArray.length)];
+        }
+        
+        
+        */
+        
+    }]);   
+    
 
     </script>
   </head>
@@ -37,8 +66,8 @@
            <input type="submit" id="submit"/>
            
            
-           <button ng-click="sc.randomStudent()">Pick Random Student</button>
-           <h3>Called Student: {{ sc.pickedStudent }}</h3>
+           <button ng-click="sc.removeStudent()">Pick Random Student</button>
+           <h3>Called Student: {{ sc.removedStudent }}</h3>
            
            <h3>Students</h3>
            <ol>
@@ -47,5 +76,6 @@
            
       </form>
     </div>
+    
   </body>
 </html>
