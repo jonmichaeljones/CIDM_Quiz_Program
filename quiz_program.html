@@ -35,7 +35,7 @@
    
     ];
 
-    qpc.students_selected = [];
+    qpc.completed_students = [];
     
     qpc.questions = 
     [
@@ -59,7 +59,7 @@
     
     qpc.nextQuestion = function(){
         
-        if(qpc.questions.length > 1)
+        if(qpc.questions.length > 0)
         {
             var randomStudent = Math.floor(Math.random() * qpc.questions.length);
             
@@ -74,6 +74,24 @@
         {
             qpc.questions = qpc.completed_questions;
             qpc.questions = [];
+        }
+    }
+    
+    qpc.nextStudent = function(){
+        if(qpc.students.length > 0)
+        {
+            var randomStudent = Math.floor(Math.random() * qpc.students.length);
+            
+            qpc.selected_students = qc.students[randomStudent];
+            
+            qpc.selected_questions.push(qpc.completed_students);
+            
+            qpc.students.splice(qpc.students);
+        }
+        else
+        {
+            qpc.students = qpc.completed_students;
+            qpc.completed_students = [];
         }
     }
         
