@@ -6,55 +6,75 @@
 
     var mymodule = angular.module('QuizProgram', []);
     
-    mymodule.controller('StudentController', ['$scope', function($scope) {
+    mymodule.controller('ProgramController', ['$scope', function($scope) {
         
-        var sc = this;
+    qpc = this;
     
-        sc.student;
-    
-        sc.studentArray = [];
-    
-        
-        
-         sc.addText = function() {
-            sc.studentArray.push(this.student);
+    qpc.students =
+    [
+        {
+            mame: "Jon Michael Jones",
+            correct: 0,
+            incorrect: 0
+        },
+        {
+            mame: "Jim Smith",
+            correct: 0,
+            incorrect: 0
+        },
+        {
+            mame: "Mandy Smith",
+            correct: 0,
+            incorrect: 0
+        },
+        {
+            mame: "Jeff Tweedy",
+            correct: 0,
+            incorrect: 0
         }
+   
+    ];
 
-        sc.randomStudent = function(){
-           sc.pickedStudent = sc.studentArray[Math.floor(Math.random() * sc.studentArray.length)];
+    qpc.students_selected = [];
+    
+    qpc.questions = 
+    [
+        {
+            question: "What angular directive goes in the html tag?",
+            answer: "ng-app"
+        },
+        
+        {
+            question: "What angular directive goes in the div tag in the body?",
+            answer: "ng-controller"
+        },
+        
+        {
+            question: "What angular directive goes in the drop dowb list?",
+            answer: "ng-model"
         }
+    ];
+
+    qpc.completed_questions = [];
+    
+    qpc.nextQuestion = function(){
         
-        
-        sc.removeStudent = function(){
-            sc.removedStudent = sc.studentArray.splice(sc.pickedStudent, 1);
+        if(qpc.questions.length > 1)
+        {
+            var randomStudent = Math.floor(Math.random() * qpc.questions.length);
+            
+            qpc.selected_questions = qpc.questions[randomStudent];
+            
+            qpc.completed_questions.push(qpc.selected_questions);
+            
+            qpc.questions.splice(randomStudent,1);
+            
         }
-        
-        
+    }
         
     }]);
 
-    mymodule.controller('QuestionController', ['$scope', function($scope) {
-        
-        var qc = this;
-    
-        qc.question;
-        /*
-        sc.questionArray = [];
-    
-        
-        
-         sc.addQuestion = function() {
-            sc.questionArray.push(this.question);
-        }
 
-        sc.randomStudent = function(){
-           sc.pickedStudent = sc.studentArray[Math.floor(Math.random() * sc.studentArray.length)];
-        }
-        
-        
-        */
-        
-    }]);   
     
 
     </script>
