@@ -4,10 +4,8 @@ myModule.controller('QuizProgramController',['$scope', 'studentListService', 'qu
     
     var qpc = this;
 
-    qpc.getStudent = function(){
-        
-        studentListService.getStudentList();
-    }
+   
+    
     
     qpc.students = [];
     qpc.students_completed = [];
@@ -70,7 +68,21 @@ myModule.controller('QuizProgramController',['$scope', 'studentListService', 'qu
         qpc.getNext();
     }
     
-    qpc.getNext();
+     qpc.getStudents = function(){
+        
+        studentListService.getStudentList();
+        .then(
+            function(response){
+                qpc.students = response.data;
+                qpc.getNext();
+            },
+            function(response){
+                qpc.students = [];
+            }
+        );
+    }
+    
+    qpc.getStudents();
         
     }]);
     
