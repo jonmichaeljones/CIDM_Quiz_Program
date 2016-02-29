@@ -4,15 +4,15 @@ myModule.controller('QuizProgramController',['$scope', 'studentListService', 'qu
     
     var qpc = this;
 
+    qpc.getStudent = function(){
+        
+        studentListService.getStudentList();
+    }
     
     qpc.students = [];
-    
-
     qpc.students_completed = [];
     
     qpc.questions = [];
-    
-
     qpc.questions_completed = [];
     
     qpc.nextQuestion = function(){
@@ -73,3 +73,38 @@ myModule.controller('QuizProgramController',['$scope', 'studentListService', 'qu
     qpc.getNext();
         
     }]);
+    
+    myModule.factory('studentListService',['$http', function($http){
+    
+    var studentListService = {};
+    
+    
+    
+    studentListService.getStudentList = function(){
+
+        return $http.get("students.json");
+
+    };
+    
+    return studentListService;
+    
+}]);
+
+
+myModule.factory('quesionListService',['$http', function($http){
+    
+    var questionListService = {};
+    
+    
+    
+   questionListService.getStudentList = function(){
+
+        return $http.get("questions.json");
+
+    };
+    
+    return questionListService;
+    
+}]);
+
+

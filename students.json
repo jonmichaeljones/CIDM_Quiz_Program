@@ -1,28 +1,28 @@
 [
         {
-            name: "Jon Michael Jones",
-            correct: 0,
-            incorrect: 0
+            "name": "Jon Michael Jones",
+            "correct": 0,
+            "incorrect": 0
         },
         {
-            name: "Rebecca Jones",
-            correct: 0,
-            incorrect: 0
+            "name": "Rebecca Jones",
+            "correct": 0,
+            "incorrect": 0
         },
         {
-            name: "Chris Martin",
-            correct: 0,
-            incorrect: 0
+            "name": "Chris Martin",
+            "correct": 0,
+            "incorrect": 0
         },
         {
-            name: "Jeff Tweedy",
-            correct: 0,
-            incorrect: 0
+            "name": "Jeff Tweedy",
+            "correct": 0,
+            "incorrect": 0
         },
         {
-            name: "Jack White",
-            correct: 0,
-            incorrect: 0
+            "name": "Jack White",
+            "correct": 0,
+            "incorrect": 0
         }
    
 ]
