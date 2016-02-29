@@ -13,17 +13,22 @@ myModule.controller('QuizProgramController',['$scope', function($scope){
             incorrect: 0
         },
         {
-            name: "Jim Smith",
+            name: "Rebecca Jones",
             correct: 0,
             incorrect: 0
         },
         {
-            name: "Mandy Smith",
+            name: "Chris Martin",
             correct: 0,
             incorrect: 0
         },
         {
             name: "Jeff Tweedy",
+            correct: 0,
+            incorrect: 0
+        },
+        {
+            name: "Jack White",
             correct: 0,
             incorrect: 0
         }
