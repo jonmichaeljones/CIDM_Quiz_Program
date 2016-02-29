@@ -1,59 +1,17 @@
 var myModule = angular.module('QuizProgram', []);
 
-myModule.controller('QuizProgramController',['$scope', function($scope){
+myModule.controller('QuizProgramController',['$scope', 'studentListService', 'quesionListService', function($scope, studentListService, quesionListService){
     
     var qpc = this;
 
     
-    qpc.students =
-    [
-        {
-            name: "Jon Michael Jones",
-            correct: 0,
-            incorrect: 0
-        },
-        {
-            name: "Rebecca Jones",
-            correct: 0,
-            incorrect: 0
-        },
-        {
-            name: "Chris Martin",
-            correct: 0,
-            incorrect: 0
-        },
-        {
-            name: "Jeff Tweedy",
-            correct: 0,
-            incorrect: 0
-        },
-        {
-            name: "Jack White",
-            correct: 0,
-            incorrect: 0
-        }
-   
-    ];
+    qpc.students = [];
+    
 
     qpc.students_completed = [];
     
-    qpc.questions = 
-    [
-        {
-            question: "What angular directive goes in the html tag?",
-            answer: "ng-app"
-        },
-        
-        {
-            question: "What angular directive goes in the div tag in the body?",
-            answer: "ng-controller"
-        },
-        
-        {
-            question: "What angular directive goes in the drop dowb list?",
-            answer: "ng-model"
-        }
-    ];
+    qpc.questions = [];
+    
 
     qpc.questions_completed = [];
     
