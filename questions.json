@@ -1,16 +1,26 @@
 [
         {
-            question: "What angular directive goes in the html tag?",
-            answer: "ng-app"
+            "question": "What angular directive goes in the html tag?",
+            "answer": "ng-app"
         },
         
         {
-            question: "What angular directive goes in the div tag in the body?",
-            answer: "ng-controller"
+            "question": "What angular directive goes in the div tag in the body?",
+            "answer": "ng-controller"
         },
         
         {
-            question: "What angular directive goes in the drop dowb list?",
-            answer: "ng-model"
+            "question": "What angular directive goes in the drop dowb list?",
+            "answer": "ng-model"
+        },
+        {
+            "question": "The controller sets up what part of the app?",
+            "answer": "scope"
+        },
+        
+        {
+            "question": "What are wired together using dependancy injections?",
+            "answer": "Services"
         }
+        
 ]

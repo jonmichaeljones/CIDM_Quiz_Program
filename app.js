@@ -99,6 +99,7 @@ myModule.controller('QuizProgramController',['$scope', 'studentListService', 'qu
         );
     }
     
+    qpc.getQuestions();
         
     }]);
     
