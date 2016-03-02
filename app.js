@@ -1,6 +1,6 @@
 var myModule = angular.module('QuizProgram', []);
 
-myModule.controller('QuizProgramController',['$scope', 'studentListService', 'quesionListService', function($scope, studentListService, quesionListService){
+myModule.controller('QuizProgramController',['$scope', 'studentListService', 'questionListService', function($scope, studentListService, questionListService){
     
     var qpc = this;
 
@@ -70,7 +70,7 @@ myModule.controller('QuizProgramController',['$scope', 'studentListService', 'qu
     
      qpc.getStudents = function(){
         
-        studentListService.getStudentList();
+        studentListService.getStudentList()
         .then(
             function(response){
                 qpc.students = response.data;
@@ -83,6 +83,22 @@ myModule.controller('QuizProgramController',['$scope', 'studentListService', 'qu
     }
     
     qpc.getStudents();
+    
+    qpc.getQuestions = function(){
+        questionListService.getQuestionList()
+        .then(
+            function(response){
+                qpc.questions = response.data;
+                qpc.getNext();
+            },
+            function(response){
+                qpc.questions = [];
+            }
+            
+            
+        );
+    }
+    
         
     }]);
     
@@ -103,13 +119,13 @@ myModule.controller('QuizProgramController',['$scope', 'studentListService', 'qu
 }]);
 
 
-myModule.factory('quesionListService',['$http', function($http){
+myModule.factory('questionListService',['$http', function($http){
     
     var questionListService = {};
     
     
     
-   questionListService.getStudentList = function(){
+   questionListService.getQuestionList = function(){
 
         return $http.get("questions.json");
 
